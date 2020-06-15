@@ -231,7 +231,6 @@ public class ChatbotActivity extends AppCompatActivity implements ChatbotCallbac
         }
     }
 
-
     private void init(String UUID) throws IOException {
         InputStream credentialStream = DialogflowCredentials.getInstance().getInputStream();
         GoogleCredentials credentials = GoogleCredentials.fromStream(credentialStream);
@@ -246,7 +245,6 @@ public class ChatbotActivity extends AppCompatActivity implements ChatbotCallbac
             send("hi");
         }
     }
-
 
     private void sendMessage(View view) {
         String msg = queryEditText.getText().toString();
@@ -267,7 +265,6 @@ public class ChatbotActivity extends AppCompatActivity implements ChatbotCallbac
         } else {
             ChatbotSettings.getInstance().setAutoWelcome(false);
         }
-
         QueryInput queryInput = QueryInput.newBuilder().setText(TextInput.newBuilder().setText(message).setLanguageCode("en-US")).build();
         dialogflowTaskRunner = new TaskRunner(this, session, sessionsClient, queryInput);
         dialogflowTaskRunner.execute();

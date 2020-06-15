@@ -1,0 +1,24 @@
+{
+  "name": "Android Dialogflow Chatbot Library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Abhinav Tyagi",
+  "license": "Copyright Abhinav Tyagi",
+  "dependencies": {
+    "actions-on-google": "^2.12.0",
+    "body-parser": "^1.19.0",
+    "dialogflow-fulfillment": "^0.6.1",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.26.0",
+    "morgan": "^1.10.0",
+    "morgan-body": "^2.4.14",
+    "npm-check-updates": "^6.0.1",
+    "string-template": "^1.0.0"
+  }
+}
