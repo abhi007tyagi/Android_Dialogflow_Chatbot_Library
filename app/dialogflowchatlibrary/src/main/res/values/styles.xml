@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Default" parent="Theme.AppCompat.Light">
+        <item name="userAvatarBG">@color/userAvatarBG</item>
+        <item name="chatPrimary">@color/chatPrimary</item>
+        <item name="chatPrimaryFocus">@color/chatPrimaryFocus</item>
+        <item name="chatPrimaryPressed">@color/chatPrimaryPressed</item>
+        <item name="chatPrimaryDisabled">@color/chatPrimaryDisabled</item>
+        <item name="chatBGnText">@color/chatBGnText</item>
+        <item name="chatSecondary">@color/chatSecondary</item>
+        <item name="chatSecondaryFocus">@color/chatSecondaryFocus</item>
+        <item name="chatSecondaryPressed">@color/chatSecondaryPressed</item>
+        <item name="chatSecondaryDisabled">@color/chatSecondaryDisabled</item>
+        <item name="botBGBubbleStroke">@color/botBGBubbleStroke</item>
+        <item name="botBGBubble">@color/botBGBubble</item>
+        <item name="userBGBubbleStroke">@color/userBGBubbleStroke</item>
+        <item name="userBGBubble">@color/userBGBubble</item>
+        <item name="checkbox">@color/checkbox</item>
+    </style>
+
+    <style name="ChatButton" parent="Base.TextAppearance.AppCompat.Button" >
+        <item name="backgroundTint">?attr/chatPrimary</item>
+    </style>
+</resources>

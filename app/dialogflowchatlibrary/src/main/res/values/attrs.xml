@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="userAvatarBG" format="reference"/>
+    <attr name="chatPrimary" format="reference"/>
+    <attr name="chatPrimaryFocus" format="reference" />
+    <attr name="chatPrimaryPressed" format="reference" />
+    <attr name="chatBGnText" format="reference" />
+    <attr name="chatPrimaryDisabled" format="reference" />
+    <attr name="chatSecondary" format="reference" />
+    <attr name="chatSecondaryFocus" format="reference" />
+    <attr name="chatSecondaryPressed" format="reference" />
+    <attr name="chatSecondaryDisabled" format="reference" />
+    <attr name="botBGBubbleStroke" format="reference" />
+    <attr name="botBGBubble" format="reference" />
+    <attr name="userBGBubbleStroke" format="reference" />
+    <attr name="userBGBubble" format="reference" />
+    <attr name="checkbox" format="reference" />
+</resources>

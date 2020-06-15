@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:theme="@style/Theme.Default"
+    app:theme="@style/Theme.Default">
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/user_bg_initials_round"
+        android:gravity="center"
+        android:padding="4dp"
+        android:src="@drawable/chat_user_avatar"
+        android:textColor="?attr/chatBGnText" />
+
+    <LinearLayout
+        android:id="@+id/msgLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toStartOf="@+id/userIcon"
+        android:background="@drawable/user_bg_bubble"
+        android:gravity="end|center_vertical"
+        android:orientation="vertical"
+        android:tag="MessageLayout">
+
+    </LinearLayout>
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/userIcon"-->
+    <!--        android:layout_width="36dp"-->
+    <!--        android:layout_height="36dp"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:layout_marginEnd="4dp"-->
+    <!--        android:background="@drawable/user_bg_initials_round"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="G"-->
+    <!--        android:textColor="?attr/chatBGnText"/>-->
+
+
+</RelativeLayout>

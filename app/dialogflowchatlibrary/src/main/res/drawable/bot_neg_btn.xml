@@ -1,0 +1,33 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <stroke android:width="2dp" android:color="@color/chatPrimaryDisabled" />
+            <solid android:color="@color/chatSecondaryDisabled" />
+            <corners android:radius="@dimen/chatbot_btn_corner_radius" />
+        </shape>
+    </item>
+
+    <item android:state_enabled="true" android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <stroke android:width="2dp" android:color="@color/chatPrimaryPressed" />
+            <solid android:color="@color/chatSecondaryPressed" />
+            <corners android:radius="@dimen/chatbot_btn_corner_radius" />
+        </shape>
+    </item>
+
+    <item android:state_enabled="true" android:state_focused="true">
+        <shape android:shape="rectangle">
+            <stroke android:width="2dp" android:color="@color/chatPrimaryFocus" />
+            <solid android:color="@color/chatSecondary" />
+            <corners android:radius="@dimen/chatbot_btn_corner_radius" />
+        </shape>
+    </item>
+
+    <item android:state_enabled="true">
+        <shape android:shape="rectangle">
+            <stroke android:width="2dp" android:color="@color/chatPrimary" />
+            <solid android:color="@color/chatSecondary" />
+            <corners android:radius="@dimen/chatbot_btn_corner_radius" />
+        </shape>
+    </item>
+</selector>
