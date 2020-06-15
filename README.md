@@ -18,10 +18,12 @@ Android Library to easily integrate Dialogflow based chatbots into an existing a
 
 
 #### 6. Add proguard rules to your project (if you don't get response from Chatbot)
-```-keep public class com.google.api.gax.core.** {
+```     
+-keep public class com.google.api.gax.core.** {
   public protected *;
 }
 -keep public class com.google.auth.oauth2.** {
   public protected *;
-}```
+}
+```
 
