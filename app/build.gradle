@@ -12,20 +12,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        release {
-            storeFile file('D:\\Data\\workspace\\android_workspace\\keys\\test_keys.jks')
-            storePassword 'India@2020'
-            keyAlias 'test_key'
-            keyPassword 'India@2020'
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
 
