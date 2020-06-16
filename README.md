@@ -7,7 +7,7 @@ dependencies
 ```
 
 // Chatbot - Java V2
-    implementation 'com.tyagiabhinav.dialogflowchatlibrary:<>'
+    implementation 'implementation 'com.tyagiabhinav:androiddialogflowchatbot:0.1.0'
     implementation 'com.google.cloud:google-cloud-dialogflow:2.0.0'
     implementation 'io.grpc:grpc-okhttp:1.29.0'
 

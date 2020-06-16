@@ -1,4 +1,20 @@
+apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.android.library'
+
+publish {
+
+    def groupProjectID = 'com.tyagiabhinav'
+    def artifactProjectID = 'androiddialogflowchatbot'
+    def publishVersionID = '0.1.0'
+
+    userOrg = 'abhi007tyagi'
+    repoName = 'AndroidDialogflowChatbot'
+    groupId = groupProjectID
+    artifactId = artifactProjectID
+    publishVersion = publishVersionID
+    desc = 'Android library for easy integration of Dialogflow based Chatbot. Library will provide a chat window with UI and action buttons to chat with bot designed with Google\'s  Dialogflow platform.'
+    website = 'https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library'
+}
 
 android {
     compileSdkVersion 29
