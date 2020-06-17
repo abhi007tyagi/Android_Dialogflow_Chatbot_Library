@@ -112,6 +112,7 @@ Get the sample NodeJS webhook code from the SampleDialogflowWebhook
 - Create a common intent and assign an event name like "android_event"
 ![event setup in Dialogflow Intent](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/android_event.JPG)
 - Enable webhook fulfillment for the intent
+![webhook enable for Intent](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/Capture_Android_Event.JPG)
 
 ## c. Intents to send UI interaction with Android
 Enable webhook fulfillment for all these intents
@@ -128,21 +129,58 @@ Code to send from webhook
  ```
     const params = {"template": "text"};
  ```
+![ANdroid UI for Simple Text](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/text_message.JPG)
 
 - Text with Buttons
  ```
     const params = {"template": "button", "buttonItems":[{"uiText":"Action 1", "actionText":"action 1 selected", "isPositive": true},{"uiText":"Action 2", "actionText":"action 2 selected", "isPositive": false}], "align": "h", "size":"l", "eventToCall":"android_event" };
  ```
-  
+![Android UI for messages with Buttons](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/button_message.JPG)
+  captured response in the event capture intent
+```
+    {
+    				"name": "projects/<project name>/agent/sessions/959b7153-f21a-4bfa-b154-a3f97a6a79d8/contexts/android_event",
+    				"parameters": {
+    					"selectedButton": {
+    						"isPositive": true,
+    						"actionText": "action 1 selected",
+    						"uiText": "Action 1"
+    					}
+    				}
+    			}
+```    
+
 - Text with Checkboxes
  ```
     const params = {"template": "checkbox", "items":[{"uiText":"item 1<br> this item is best", "id":"1"},{"uiText":"item 2<br> this item is OK", "id":"2"},{"uiText":"item 3", "id":"3"}], "buttonItems":[{"uiText":"Yes", "actionText":"process selected", "isPositive": true},{"uiText":"No", "actionText":"cancel", "isPositive": false}], "align": "h", "size":"l", "eventToCall":"android_event" };
  ```  
+ ![Android UI for messages with Checkbox](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/checkbox_message.JPG)
+  captured response in the event capture intent
+```
+    {
+    				"name": "projects/<project name>/agent/sessions/959b7153-f21a-4bfa-b154-a3f97a6a79d8/contexts/android_event",
+    				"parameters": {
+    					"selectedButton": {
+    						"uiText": "Yes",
+    						"isPositive": true,
+    						"actionText": "process selected"
+    					},
+    					"template": "checkbox",
+    					"selectedItems": [
+    						{
+    							"id": "1",
+    							"uiText": "item 1<br> this item is best"
+    						}
+    					]
+    				}
+    			}
+```     
   
 - Text with Buttons to Navigate to other activities or URL
 ```
     const params = {"template": "hyperlink", "linkItems":[{"uiText":"Next Activity", "linkType":"internal", "navigateAndroid":"com.tyagiabhinav.dialogflowchat.NavTestActivity", "navigateIOS":"", "isPositive": true},{"uiText":"Google", "linkType":"external", "navigateAndroid":"http://www.google.com", "navigateIOS":"http://www.google.com", "isPositive": false}], "align": "v", "size":"l", "eventToCall":"android_event" };
 ```  
+![Android UI for messages with Navigation Buttons](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/navigate_message.JPG)
       
 - params attribute information
 
