@@ -144,17 +144,18 @@ Code to send from webhook
 ```  
       
 - params attribute information
-  template - to show what UI you want on Android chat
-  *items - list of interactable UI components  
-  uiText - text shown for the item on Android like Button text, Text for checkbox. Simple HTML formatting will work for Checkboxes
-  actionText - text to be shown when a button is clicked as input from user in the chat
-  isPositive - for colour scheme
-  align - for horzontal or vertical layout of buttons. takes values h/v
-  size - text size for button. takes values s,m,l (s=10, m=14, l=18)  
-  eventToCall - event name provided in the Dialogflow Intent to capture user interaction result from Android like "android_event"
-  id - unique number for identification
-  linkType - within app or outside app navigation. takes value internal/external
-  navigateAndroid - complete class name or URL to navigate
+
+  - template - to show what UI you want on Android chat
+  - *items - list of interactable UI components  
+  - uiText - text shown for the item on Android like Button text, Text for checkbox. Simple HTML formatting will work for Checkboxes
+  - actionText - text to be shown when a button is clicked as input from user in the chat
+  - isPositive - for colour scheme
+  - align - for horzontal or vertical layout of buttons. takes values h/v
+  - size - text size for button. takes values s,m,l (s=10, m=14, l=18)  
+  - eventToCall - event name provided in the Dialogflow Intent to capture user interaction result from Android like "android_event"
+  - id - unique number for identification
+  - linkType - within app or outside app navigation. takes value internal/external
+  - navigateAndroid - complete class name or URL to navigate
   
     
 
