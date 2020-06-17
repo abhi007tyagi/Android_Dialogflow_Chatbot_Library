@@ -103,3 +103,58 @@ In your application, add following colours and replace the default values
 
 ```
 
+#### 7. Interacting with webhook to show simple text, text message with buttons, checkboxes or navigating to other activities
+
+## a. Sample Dialogflow Webhook NodeJS code 
+Get the sample NodeJS webhook code from the SampleDialogflowWebhook
+
+## b. Dialogflow Intent to capture events from Android app
+- Create a common intent and assign an event name like "android_event"
+- Enable webhook fulfillment for the intent
+
+## c. Intents to send UI interaction with Android
+Enable webhook fulfillment for all these intents
+
+Code to send from webhook
+```
+    const params = <Depending on Interaction Type Change params here>;
+    const param_context = {name: "param_context", lifespan: 10, parameters: params};
+    agent.context.set(param_context);
+    agent.add('This is a message section for showing text');
+
+```
+- Simple Text
+ ```
+    const params = {"template": "text"};
+ ```
+
+- Text with Buttons
+ ```
+    const params = {"template": "button", "buttonItems":[{"uiText":"Action 1", "actionText":"action 1 selected", "isPositive": true},{"uiText":"Action 2", "actionText":"action 2 selected", "isPositive": false}], "align": "h", "size":"l", "eventToCall":"android_event" };
+ ```
+  
+- Text with Checkboxes
+ ```
+    const params = {"template": "checkbox", "items":[{"uiText":"item 1<br> this item is best", "id":"1"},{"uiText":"item 2<br> this item is OK", "id":"2"},{"uiText":"item 3", "id":"3"}], "buttonItems":[{"uiText":"Yes", "actionText":"process selected", "isPositive": true},{"uiText":"No", "actionText":"cancel", "isPositive": false}], "align": "h", "size":"l", "eventToCall":"android_event" };
+ ```  
+  
+- Text with Buttons to Navigate to other activities or URL
+```
+    const params = {"template": "hyperlink", "linkItems":[{"uiText":"Next Activity", "linkType":"internal", "navigateAndroid":"com.tyagiabhinav.dialogflowchat.NavTestActivity", "navigateIOS":"", "isPositive": true},{"uiText":"Google", "linkType":"external", "navigateAndroid":"http://www.google.com", "navigateIOS":"http://www.google.com", "isPositive": false}], "align": "v", "size":"l", "eventToCall":"android_event" };
+```  
+      
+- params attribute information
+  template - to show what UI you want on Android chat
+  *items - list of interactable UI components  
+  uiText - text shown for the item on Android like Button text, Text for checkbox. Simple HTML formatting will work for Checkboxes
+  actionText - text to be shown when a button is clicked as input from user in the chat
+  isPositive - for colour scheme
+  align - for horzontal or vertical layout of buttons. takes values h/v
+  size - text size for button. takes values s,m,l (s=10, m=14, l=18)  
+  eventToCall - event name provided in the Dialogflow Intent to capture user interaction result from Android like "android_event"
+  id - unique number for identification
+  linkType - within app or outside app navigation. takes value internal/external
+  navigateAndroid - complete class name or URL to navigate
+  
+    
+
