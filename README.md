@@ -110,12 +110,18 @@ Get the sample NodeJS webhook code from the SampleDialogflowWebhook
 
 ## b. Dialogflow Intent to capture events from Android app
 - Create a common intent and assign an event name like "android_event"
+
 ![event setup in Dialogflow Intent](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/android_event.JPG)
+
+
 - Enable webhook fulfillment for the intent
+
 ![webhook enable for Intent](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/Capture_Android_Event.JPG)
+
 
 ## c. Intents to send UI interaction with Android
 Enable webhook fulfillment for all these intents
+
 ![webhook enable for Intent](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/Test%20Intent.JPG)
 
 Code to send from webhook
@@ -137,6 +143,7 @@ Code to send from webhook
     const params = {"template": "button", "buttonItems":[{"uiText":"Action 1", "actionText":"action 1 selected", "isPositive": true},{"uiText":"Action 2", "actionText":"action 2 selected", "isPositive": false}], "align": "h", "size":"l", "eventToCall":"android_event" };
  ```
 ![Android UI for messages with Buttons](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/button_message.JPG)
+
   captured response in the event capture intent
 ```
     {
@@ -156,6 +163,7 @@ Code to send from webhook
     const params = {"template": "checkbox", "items":[{"uiText":"item 1<br> this item is best", "id":"1"},{"uiText":"item 2<br> this item is OK", "id":"2"},{"uiText":"item 3", "id":"3"}], "buttonItems":[{"uiText":"Yes", "actionText":"process selected", "isPositive": true},{"uiText":"No", "actionText":"cancel", "isPositive": false}], "align": "h", "size":"l", "eventToCall":"android_event" };
  ```  
  ![Android UI for messages with Checkbox](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/checkbox_message.JPG)
+ 
   captured response in the event capture intent
 ```
     {
