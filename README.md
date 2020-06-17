@@ -110,6 +110,7 @@ Get the sample NodeJS webhook code from the SampleDialogflowWebhook
 
 ## b. Dialogflow Intent to capture events from Android app
 - Create a common intent and assign an event name like "android_event"
+![event setup in Dialogflow Intent](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/android_event.JPG)
 - Enable webhook fulfillment for the intent
 
 ## c. Intents to send UI interaction with Android
