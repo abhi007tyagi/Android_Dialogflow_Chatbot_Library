@@ -120,7 +120,7 @@ Code to send from webhook
     const params = <Depending on Interaction Type Change params here>;
     const param_context = {name: "param_context", lifespan: 10, parameters: params};
     agent.context.set(param_context);
-    agent.add('This is a message section for showing text');
+    agent.add('This is a message section for showing text'); // Text message to be shown to the user
 
 ```
 - Simple Text
