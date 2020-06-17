@@ -147,15 +147,15 @@ Code to send from webhook
   captured response in the event capture intent
 ```
     {
-    				"name": "projects/<project name>/agent/sessions/959b7153-f21a-4bfa-b154-a3f97a6a79d8/contexts/android_event",
-    				"parameters": {
-    					"selectedButton": {
-    						"isPositive": true,
-    						"actionText": "action 1 selected",
-    						"uiText": "Action 1"
-    					}
-    				}
-    			}
+        "name": "projects/<project name>/agent/sessions/<sessionID>/contexts/android_event",
+        "parameters": {
+            "selectedButton": {
+                "isPositive": true,
+                "actionText": "action 1 selected",
+                "uiText": "Action 1"
+            }
+        }
+    }
 ```    
 
 - Text with Checkboxes
@@ -167,22 +167,22 @@ Code to send from webhook
   captured response in the event capture intent
 ```
     {
-    				"name": "projects/<project name>/agent/sessions/959b7153-f21a-4bfa-b154-a3f97a6a79d8/contexts/android_event",
-    				"parameters": {
-    					"selectedButton": {
-    						"uiText": "Yes",
-    						"isPositive": true,
-    						"actionText": "process selected"
-    					},
-    					"template": "checkbox",
-    					"selectedItems": [
-    						{
-    							"id": "1",
-    							"uiText": "item 1<br> this item is best"
-    						}
-    					]
-    				}
-    			}
+        "name": "projects/<project name>/agent/sessions/<sessionID>/contexts/android_event",
+        "parameters": {
+            "selectedButton": {
+                "uiText": "Yes",
+                "isPositive": true,
+                "actionText": "process selected"
+            },
+            "template": "checkbox",
+            "selectedItems": [
+                {
+                    "id": "1",
+                    "uiText": "item 1<br> this item is best"
+                }
+            ]
+        }
+    }
 ```     
   
 - Text with Buttons to Navigate to other activities or URL
