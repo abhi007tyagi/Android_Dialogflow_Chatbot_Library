@@ -35,6 +35,7 @@ packaging options under android tag
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
 ```
+Note: Do not put parent activity as it may interfere with overridden back click alert dialog
 
 
 #### 3. Add Google Credential JSON file for Dialogflow Project
@@ -95,10 +96,8 @@ In your application, add following colours and replace the default values
 
 #### 6. Add proguard rules to your project (if you don't get response from Chatbot)
 ```     
--keep public class com.google.api.gax.core.** {
-  public protected *;
-}
--keep public class com.google.auth.oauth2.** {
+
+-keep public class com.google.a** {
   public protected *;
 }
 
