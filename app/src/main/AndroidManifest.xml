@@ -22,6 +22,7 @@
         <activity
             android:name="com.tyagiabhinav.dialogflowchatlibrary.ChatbotActivity"
             android:launchMode="singleTask"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 

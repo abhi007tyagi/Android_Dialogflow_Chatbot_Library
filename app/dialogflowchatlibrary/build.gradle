@@ -5,7 +5,7 @@ publish {
 
     def groupProjectID = 'com.tyagiabhinav'
     def artifactProjectID = 'androiddialogflowchatbot'
-    def publishVersionID = '0.1.3'
+    def publishVersionID = '0.1.4'
 
     userOrg = 'abhi007tyagi'
     repoName = 'AndroidDialogflowChatbot'
