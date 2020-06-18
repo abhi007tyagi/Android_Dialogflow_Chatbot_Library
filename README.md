@@ -73,7 +73,7 @@ public void openChatbot(View view) {
 In your application, add following colours and replace the default values
 ```
 
-<color name="userAvatarBG">#666666</color>
+    <color name="userAvatarBG">#666666</color>
     <color name="chatPrimary">#CC0000</color>
     <color name="chatPrimaryFocus">#DD0000</color>
     <color name="chatPrimaryPressed">#A60000</color>
