@@ -57,13 +57,26 @@ public class CardMessageTemplate extends MessageLayoutTemplate {
                 TextView titleView = cardLayout.findViewById(R.id.title);
                 TextView descriptionView = cardLayout.findViewById(R.id.description);
                 titleView.setMovementMethod(LinkMovementMethod.getInstance());
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    titleView.setText(Html.fromHtml(title, Html.FROM_HTML_MODE_LEGACY));
-                    descriptionView.setText(Html.fromHtml(description, Html.FROM_HTML_MODE_LEGACY));
+                if (title != null) {
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                        titleView.setText(Html.fromHtml(title, Html.FROM_HTML_MODE_LEGACY));
+                    } else {
+                        titleView.setText(Html.fromHtml(title));
+                    }
                 } else {
-                    titleView.setText(Html.fromHtml(title));
-                    descriptionView.setText(Html.fromHtml(description));
+                    titleView.setVisibility(GONE);
                 }
+
+                if (description != null) {
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                        descriptionView.setText(Html.fromHtml(description, Html.FROM_HTML_MODE_LEGACY));
+                    } else {
+                        descriptionView.setText(Html.fromHtml(description));
+                    }
+                } else {
+                    descriptionView.setVisibility(GONE);
+                }
+
                 Runnable downloadImage = new Runnable() {
                     @Override
                     public void run() {
