@@ -217,7 +217,7 @@ Code to send from webhook
   - uiText - text shown for the item on Android like Button text, Text for checkbox. Simple HTML formatting will work for Checkboxes
   - actionText - text to be shown when a button is clicked as input from user in the chat
   - isPositive - for colour scheme
-  - align - for horzontal or vertical layout of buttons. takes values h/v
+  - align - for horizontal or vertical layout of buttons. takes values h/v
   - size - text size for button. takes values s,m,l (s=10, m=14, l=18)  
   - eventToCall - event name provided in the Dialogflow Intent to capture user interaction result from Android like "android_event"
   - id - unique number for identification
