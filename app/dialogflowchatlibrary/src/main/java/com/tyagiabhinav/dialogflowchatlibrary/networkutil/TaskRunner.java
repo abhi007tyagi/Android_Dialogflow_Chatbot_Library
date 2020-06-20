@@ -1,5 +1,7 @@
 package com.tyagiabhinav.dialogflowchatlibrary.networkutil;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -10,6 +12,7 @@ import com.google.cloud.dialogflow.v2.QueryInput;
 import com.google.cloud.dialogflow.v2.SessionName;
 import com.google.cloud.dialogflow.v2.SessionsClient;
 
+import java.io.InputStream;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -31,7 +34,10 @@ public class TaskRunner {
         this.queryInput = queryInput;
     }
 
-    public void execute() {
+    public TaskRunner() {
+    }
+
+    public void executeChat() {
         Log.i("Task Runner", "execute");
         executor.execute(new Runnable() {
             @Override
@@ -56,5 +62,10 @@ public class TaskRunner {
                 });
             }
         });
+    }
+
+    public void executeTask(Runnable task) {
+        Log.d("Task Runner", "task");
+        executor.execute(task);
     }
 }

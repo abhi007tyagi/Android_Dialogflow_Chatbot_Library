@@ -172,6 +172,11 @@ public abstract class MessageLayoutTemplate extends FrameLayout {
         return (LinearLayout) inflater.inflate(R.layout.checkbox_container, null);
     }
 
+    LinearLayout getCardLayout() {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        return (LinearLayout) inflater.inflate(R.layout.card_layout, null);
+    }
+
     void setViewsToDisable(View view) {
         viewsToDisable.add(view);
     }

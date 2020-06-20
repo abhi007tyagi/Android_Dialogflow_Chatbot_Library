@@ -35,7 +35,7 @@ public class HyperLinkTemplate extends MessageLayoutTemplate {
             List<Value> hyperLinkList = (contextParam.get("linkItems").getListValue() != null) ? contextParam.get("linkItems").getListValue().getValuesList() : null;
             String align = context.getParameters().getFieldsMap().get("align").getStringValue();
             String sizeValue = context.getParameters().getFieldsMap().get("size").getStringValue();
-            String eventName = context.getParameters().getFieldsMap().get("eventToCall").getStringValue();
+//            String eventName = context.getParameters().getFieldsMap().get("eventToCall").getStringValue();
 
             if (align.equalsIgnoreCase("horizontal") || align.equalsIgnoreCase("h")) {
                 btnLayout = getHorizontalContainer();
@@ -43,7 +43,7 @@ public class HyperLinkTemplate extends MessageLayoutTemplate {
 
             if (hyperLinkList != null) {
                 for (Value item : hyperLinkList) {
-                    btnLayout.addView(getBtn("hyperlink", item.getStructValue().getFieldsMap(), sizeValue, eventName));
+                    btnLayout.addView(getBtn("hyperlink", item.getStructValue().getFieldsMap(), sizeValue, null));
                 }
             }
         }

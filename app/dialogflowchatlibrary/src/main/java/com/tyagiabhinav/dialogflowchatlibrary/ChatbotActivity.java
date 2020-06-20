@@ -32,6 +32,7 @@ import com.google.protobuf.Struct;
 import com.tyagiabhinav.dialogflowchatlibrary.networkutil.ChatbotCallback;
 import com.tyagiabhinav.dialogflowchatlibrary.networkutil.TaskRunner;
 import com.tyagiabhinav.dialogflowchatlibrary.templates.ButtonMessageTemplate;
+import com.tyagiabhinav.dialogflowchatlibrary.templates.CardMessageTemplate;
 import com.tyagiabhinav.dialogflowchatlibrary.templates.CheckBoxMessageTemplate;
 import com.tyagiabhinav.dialogflowchatlibrary.templates.HyperLinkTemplate;
 import com.tyagiabhinav.dialogflowchatlibrary.templates.TextMessageTemplate;
@@ -252,7 +253,7 @@ public class ChatbotActivity extends AppCompatActivity implements ChatbotCallbac
         }
         QueryInput queryInput = QueryInput.newBuilder().setText(TextInput.newBuilder().setText(message).setLanguageCode("en-US")).build();
         dialogflowTaskRunner = new TaskRunner(this, session, sessionsClient, queryInput);
-        dialogflowTaskRunner.execute();
+        dialogflowTaskRunner.executeChat();
     }
 
     private void send(EventInput event, String message) {
@@ -268,7 +269,7 @@ public class ChatbotActivity extends AppCompatActivity implements ChatbotCallbac
 
         QueryInput queryInput = QueryInput.newBuilder().setEvent(event).build();
         dialogflowTaskRunner = new TaskRunner(this, session, sessionsClient, queryInput);
-        dialogflowTaskRunner.execute();
+        dialogflowTaskRunner.executeChat();
     }
 
     private void showProcessWaitBubble() {
@@ -321,6 +322,12 @@ public class ChatbotActivity extends AppCompatActivity implements ChatbotCallbac
                                     Log.d(TAG, "processResponse: CheckBox Template");
                                     CheckBoxMessageTemplate cbmt = new CheckBoxMessageTemplate(ChatbotActivity.this, ChatbotActivity.this, Constants.BOT);
                                     chatLayout.addView(cbmt.showMessage(response)); // move focus to text view to automatically make it scroll up if softfocus
+//                            queryEditText.requestFocus();
+                                    break;
+                                case "card":
+                                    Log.d(TAG, "processResponse: Card Template");
+                                    CardMessageTemplate cmt = new CardMessageTemplate(ChatbotActivity.this, ChatbotActivity.this, Constants.BOT);
+                                    chatLayout.addView(cmt.showMessage(response)); // move focus to text view to automatically make it scroll up if softfocus
 //                            queryEditText.requestFocus();
                                     break;
                             }
