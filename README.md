@@ -260,9 +260,10 @@ Code to send from webhook
   - id - unique number for identification
   - linkType - within app or outside app navigation. takes value internal/external
   - navigateAndroid - complete class name or URL to navigate
-  - imgUrl - image URL for the card
-  - title - image title for the card(optional)
-  - description - image description for the card(optional)
+  - imgUrl - image URL for the card/carousel
+  - title - image title for the image(optional)
+  - description - image description for the image(optional)
+  - toast - message to be shown in toast when user selects the image
   
     
 
