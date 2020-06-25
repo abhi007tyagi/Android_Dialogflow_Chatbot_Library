@@ -20,4 +20,5 @@
     <color name="userBGBubble">#E4F5CA</color>
     <color name="checkbox">#161616</color>
     <color name="statusBarColor">@color/chatPrimaryPressed</color>
+    <color name="selectorBGColor">@color/chatPrimaryPressed</color>
 </resources>

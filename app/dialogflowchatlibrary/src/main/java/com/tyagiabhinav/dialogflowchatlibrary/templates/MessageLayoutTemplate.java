@@ -13,12 +13,14 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 import com.tyagiabhinav.dialogflowchatlibrary.ChatbotSettings;
 import com.tyagiabhinav.dialogflowchatlibrary.R;
+import com.tyagiabhinav.dialogflowchatlibrary.templateutil.CarouselPager;
 import com.tyagiabhinav.dialogflowchatlibrary.templateutil.Constants;
 import com.tyagiabhinav.dialogflowchatlibrary.templateutil.OnClickCallback;
 import com.tyagiabhinav.dialogflowchatlibrary.templateutil.ReturnMessage;
@@ -34,6 +37,8 @@ import com.tyagiabhinav.dialogflowchatlibrary.templateutil.ReturnMessage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import androidx.viewpager.widget.ViewPager;
 
 public abstract class MessageLayoutTemplate extends FrameLayout {
 
@@ -69,14 +74,14 @@ public abstract class MessageLayoutTemplate extends FrameLayout {
             case Constants.BOT:
                 msgLayout = (RelativeLayout) inflater.inflate(R.layout.bot_msg, null);
                 Drawable chatBotAvatar = ChatbotSettings.getInstance().getChatBotAvatar();
-                if(chatBotAvatar != null){
+                if (chatBotAvatar != null) {
                     ((ImageView) msgLayout.findViewById(R.id.botIcon)).setImageDrawable(chatBotAvatar);
                 }
                 break;
             case Constants.USER:
                 msgLayout = (RelativeLayout) inflater.inflate(R.layout.user_msg, null);
                 Drawable chatUserAvatar = ChatbotSettings.getInstance().getChatBotAvatar();
-                if(chatUserAvatar != null){
+                if (chatUserAvatar != null) {
                     ((ImageView) msgLayout.findViewById(R.id.userIcon)).setImageDrawable(chatUserAvatar);
                 }
                 break;
@@ -172,9 +177,18 @@ public abstract class MessageLayoutTemplate extends FrameLayout {
         return (LinearLayout) inflater.inflate(R.layout.checkbox_container, null);
     }
 
-    LinearLayout getCardLayout() {
+    LinearLayout getCardLayout(ViewGroup container) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        return (LinearLayout) inflater.inflate(R.layout.card_layout, null);
+        if (container != null) {
+            return (LinearLayout) inflater.inflate(R.layout.card_layout, container, false);
+        } else {
+            return (LinearLayout) inflater.inflate(R.layout.card_layout, null);
+        }
+    }
+
+    CarouselPager getCarouselPager() {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        return (CarouselPager) inflater.inflate(R.layout.carousel_container, null);
     }
 
     void setViewsToDisable(View view) {

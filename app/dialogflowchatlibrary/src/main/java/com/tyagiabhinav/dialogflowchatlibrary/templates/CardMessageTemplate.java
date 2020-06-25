@@ -39,7 +39,7 @@ public class CardMessageTemplate extends MessageLayoutTemplate {
         List<com.google.cloud.dialogflow.v2.Context> contextList = response.getQueryResult().getOutputContextsList();
         LinearLayout cardContainer = getVerticalContainer();
 
-        final LinearLayout cardLayout = getCardLayout();
+        final LinearLayout cardLayout = getCardLayout(null);
         LinearLayout btnLayout = getVerticalContainer();
         btnLayout.setFocusableInTouchMode(true);
         for (com.google.cloud.dialogflow.v2.Context context : contextList) {

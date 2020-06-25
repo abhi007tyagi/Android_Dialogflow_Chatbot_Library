@@ -203,6 +203,43 @@ Code to send from webhook
         }
     }
 ```     
+
+- Text with Carousel
+ ```
+    const params = {"template": "carousel", "carouselItems":[{"id":"1","imgUrl":"https://loremflickr.com/900/500/dog", "title":"<b>Image Title</b><i>(optional)</i>", "description":"<i>Image description. (optional)</i>","toast":"selected Dog (optional)"},{"id":"2","imgUrl":"https://loremflickr.com/900/500/cat", "title":"<b>Image Title</b><i>(optional)</i>","toast":"selected Cat (optional)", "description":"<i>Image description. (optional)</i>"},{"id":"3","imgUrl":"https://loremflickr.com/900/500/owl", "title":"<b>Image Title</b><i>(optional)</i>", "description":"<i>Image description. (optional)</i>","toast":"selected Owl (optional)"}], "buttonItems":[{"uiText":"Select", "actionText":"process selected", "isPositive": true},{"uiText":"Cancel", "actionText":"cancel", "isPositive": false}], "align": "h", "size":"l", "eventToCall":"android_event" };
+ ```  
+ ![Android UI for messages with Checkbox](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/checkbox_message.JPG)
+ 
+  captured response in the event capture intent
+```
+    {
+        "name": "projects/<project name>/agent/sessions/<sessionID>/contexts/android_event",
+        "parameters": {
+            "selectedButton": {
+                "isPositive": true,
+                "uiText": "Select",
+                "actionText": "process selected"
+            },
+            "selectedItems": [
+                {
+                    "toast": "selected Cat",
+                    "imgUrl": "https://loremflickr.com/900/500/cat",
+                    "id": "2",
+                    "description": "<i>Image description. (optional)</i>",
+                    "title": "<b>Image Title</b><i>(optional)</i>"
+                },
+                {
+                    "description": "<i>Image description. (optional)</i>",
+                    "title": "<b>Image Title</b><i>(optional)</i>",
+                    "toast": "selected Owl",
+                    "id": "3",
+                    "imgUrl": "https://loremflickr.com/900/500/owl"
+                }
+            ],
+            "template": "carousel"
+        }
+    }
+```     
   
 - Text with Buttons to Navigate to other activities or URL
 ```
