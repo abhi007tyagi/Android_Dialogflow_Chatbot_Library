@@ -208,7 +208,7 @@ Code to send from webhook
  ```
     const params = {"template": "carousel", "carouselItems":[{"id":"1","imgUrl":"https://loremflickr.com/900/500/dog", "title":"<b>Image Title</b><i>(optional)</i>", "description":"<i>Image description. (optional)</i>","toast":"selected Dog (optional)"},{"id":"2","imgUrl":"https://loremflickr.com/900/500/cat", "title":"<b>Image Title</b><i>(optional)</i>","toast":"selected Cat (optional)", "description":"<i>Image description. (optional)</i>"},{"id":"3","imgUrl":"https://loremflickr.com/900/500/owl", "title":"<b>Image Title</b><i>(optional)</i>", "description":"<i>Image description. (optional)</i>","toast":"selected Owl (optional)"}], "buttonItems":[{"uiText":"Select", "actionText":"process selected", "isPositive": true},{"uiText":"Cancel", "actionText":"cancel", "isPositive": false}], "align": "h", "size":"l", "eventToCall":"android_event" };
  ```  
- ![Android UI for messages with Checkbox](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/checkbox_message.JPG)
+ ![Android UI for messages with Carousel](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/carousel.gif)
  
   captured response in the event capture intent
 ```

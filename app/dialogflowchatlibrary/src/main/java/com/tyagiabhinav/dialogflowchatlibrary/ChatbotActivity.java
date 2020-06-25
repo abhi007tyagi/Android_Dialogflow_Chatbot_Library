@@ -311,25 +311,25 @@ public class ChatbotActivity extends AppCompatActivity implements ChatbotCallbac
                                     Log.d(TAG, "processResponse: Button Template");
                                     ButtonMessageTemplate bmt = new ButtonMessageTemplate(ChatbotActivity.this, ChatbotActivity.this, Constants.BOT);
                                     chatLayout.addView(bmt.showMessage(response)); // move focus to text view to automatically make it scroll up if softfocus
-//                                    queryEditText.setEnabled(false);
+                                    queryEditText.setEnabled(false);
                                     break;
                                 case "hyperlink":
                                     Log.d(TAG, "processResponse: Hyperlink Template");
                                     HyperLinkTemplate blt = new HyperLinkTemplate(ChatbotActivity.this, ChatbotActivity.this, Constants.BOT);
                                     chatLayout.addView(blt.showMessage(response)); // move focus to text view to automatically make it scroll up if softfocus
-//                            queryEditText.requestFocus();
+                                    queryEditText.setEnabled(false);
                                     break;
                                 case "checkbox":
                                     Log.d(TAG, "processResponse: CheckBox Template");
                                     CheckBoxMessageTemplate cbmt = new CheckBoxMessageTemplate(ChatbotActivity.this, ChatbotActivity.this, Constants.BOT);
                                     chatLayout.addView(cbmt.showMessage(response)); // move focus to text view to automatically make it scroll up if softfocus
-//                            queryEditText.requestFocus();
+                                    queryEditText.setEnabled(false);
                                     break;
                                 case "card":
                                     Log.d(TAG, "processResponse: Card Template");
                                     CardMessageTemplate cmt = new CardMessageTemplate(ChatbotActivity.this, ChatbotActivity.this, Constants.BOT);
                                     chatLayout.addView(cmt.showMessage(response)); // move focus to text view to automatically make it scroll up if softfocus
-//                            queryEditText.requestFocus();
+                                    queryEditText.setEnabled(false);
                                     break;
                                 case "carousel":
                                     Log.d(TAG, "processResponse: Carousel Template");
