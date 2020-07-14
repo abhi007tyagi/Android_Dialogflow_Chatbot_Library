@@ -56,7 +56,7 @@ public void openChatbot(View view) {
 //                .setChatUserAvatar(getDrawable(R.drawable.avatarUser)) // provide avatar for your the user if default is not required
                 .setShowMic(true) // False by Default, True if you want to use Voice input from the user to chat
                 .build());
-        Intent intent = new Intent(MainActivity.this, ChatbotActivity.class);
+        Intent intent = new Intent(<CALLING ACTIVITY>.this, ChatbotActivity.class);
         Bundle bundle = new Bundle();
 
         // provide a UUID for your session with the Dialogflow agent
