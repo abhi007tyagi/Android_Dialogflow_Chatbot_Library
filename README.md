@@ -7,9 +7,9 @@ dependencies
 ```
 
 // Chatbot - Java V2
-    implementation 'com.tyagiabhinav:androiddialogflowchatbot:<latest version>'
-    implementation 'com.google.cloud:google-cloud-dialogflow:2.0.0'
-    implementation 'io.grpc:grpc-okhttp:1.29.0'
+    implementation 'com.tyagiabhinav:androiddialogflowchatbot:<latest version>' //0.1.9
+    implementation 'com.google.cloud:google-cloud-dialogflow:2.2.0'
+    implementation 'io.grpc:grpc-okhttp:1.31.1'
 
 ```
 
@@ -179,7 +179,7 @@ Code to send from webhook
 
 - Text with Checkboxes
  ```
-    const params = {"template": "checkbox", "items":[{"uiText":"item 1<br> this item is best", "id":"1"},{"uiText":"item 2<br> this item is OK", "id":"2"},{"uiText":"item 3", "id":"3"}], "buttonItems":[{"uiText":"Yes", "actionText":"process selected", "isPositive": true},{"uiText":"No", "actionText":"cancel", "isPositive": false}], "align": "h", "size":"l", "eventToCall":"android_event" };
+    const params = {"template": "checkbox", "checkboxItems":[{"uiText":"item 1<br> this item is best", "id":"1"},{"uiText":"item 2<br> this item is OK", "id":"2"},{"uiText":"item 3", "id":"3"}], "buttonItems":[{"uiText":"Yes", "actionText":"process selected", "isPositive": true},{"uiText":"No", "actionText":"cancel", "isPositive": false}], "align": "h", "size":"l", "eventToCall":"android_event" };
  ```  
  ![Android UI for messages with Checkbox](https://github.com/abhi007tyagi/Android_Dialogflow_Chatbot_Library/blob/master/SampleDialogflowWebhook/images_for_understanding/checkbox_message.JPG)
  
