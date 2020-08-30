@@ -32,7 +32,7 @@ public class ButtonMessageTemplate extends MessageLayoutTemplate {
         btnLayout.setFocusableInTouchMode(true);
         for (com.google.cloud.dialogflow.v2.Context context : contextList) {
             Map<String, Value> contextParam = context.getParameters().getFieldsMap();
-            List<Value> buttonList = (contextParam.get("buttonItems").getListValue() != null) ? contextParam.get("buttonItems").getListValue().getValuesList() : null;
+            List<Value> buttonList = (contextParam.get("buttonItems") != null) ? contextParam.get("buttonItems").getListValue().getValuesList() : null;
             String align = context.getParameters().getFieldsMap().get("align").getStringValue();
             String sizeValue = context.getParameters().getFieldsMap().get("size").getStringValue();
             String eventName = context.getParameters().getFieldsMap().get("eventToCall").getStringValue();

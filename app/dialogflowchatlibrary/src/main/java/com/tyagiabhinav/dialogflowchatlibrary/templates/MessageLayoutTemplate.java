@@ -80,7 +80,7 @@ public abstract class MessageLayoutTemplate extends FrameLayout {
                 break;
             case Constants.USER:
                 msgLayout = (RelativeLayout) inflater.inflate(R.layout.user_msg, null);
-                Drawable chatUserAvatar = ChatbotSettings.getInstance().getChatBotAvatar();
+                Drawable chatUserAvatar = ChatbotSettings.getInstance().getChatUserAvatar();
                 if (chatUserAvatar != null) {
                     ((ImageView) msgLayout.findViewById(R.id.userIcon)).setImageDrawable(chatUserAvatar);
                 }

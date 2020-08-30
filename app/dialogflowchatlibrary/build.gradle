@@ -5,7 +5,7 @@ publish {
 
     def groupProjectID = 'com.tyagiabhinav'
     def artifactProjectID = 'androiddialogflowchatbot'
-    def publishVersionID = '0.1.8'
+    def publishVersionID = '0.1.9'
 
     userOrg = 'abhi007tyagi'
     repoName = 'AndroidDialogflowChatbot'
@@ -43,19 +43,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation 'com.google.cloud:google-cloud-dialogflow:2.0.0'
+    implementation 'com.google.cloud:google-cloud-dialogflow:2.2.0'
     // for Remote Procedure Call to avoid "No functional channel service provider found" error while creating SessionsClient
-    implementation 'io.grpc:grpc-okhttp:1.29.0'
+    implementation 'io.grpc:grpc-okhttp:1.31.1'
 //    implementation 'com.google.auth:google-auth-library-oauth2-http:0.20.0'
 }

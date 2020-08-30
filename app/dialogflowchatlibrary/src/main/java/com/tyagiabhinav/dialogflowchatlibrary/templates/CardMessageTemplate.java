@@ -44,8 +44,8 @@ public class CardMessageTemplate extends MessageLayoutTemplate {
         btnLayout.setFocusableInTouchMode(true);
         for (com.google.cloud.dialogflow.v2.Context context : contextList) {
             Map<String, Value> contextParam = context.getParameters().getFieldsMap();
-            Map<String, Value> cardItems = (contextParam.get("cardItems").getListValue() != null) ? contextParam.get("cardItems").getStructValue().getFieldsMap() : null;
-            List<Value> buttonList = (contextParam.get("buttonItems").getListValue() != null) ? contextParam.get("buttonItems").getListValue().getValuesList() : null;
+            Map<String, Value> cardItems = (contextParam.get("cardItems") != null) ? contextParam.get("cardItems").getStructValue().getFieldsMap() : null;
+            List<Value> buttonList = (contextParam.get("buttonItems") != null) ? contextParam.get("buttonItems").getListValue().getValuesList() : null;
             String align = context.getParameters().getFieldsMap().get("align").getStringValue();
             String sizeValue = context.getParameters().getFieldsMap().get("size").getStringValue();
             String eventName = context.getParameters().getFieldsMap().get("eventToCall").getStringValue();

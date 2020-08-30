@@ -32,7 +32,7 @@ public class HyperLinkTemplate extends MessageLayoutTemplate {
         btnLayout.setFocusableInTouchMode(true);
         for (com.google.cloud.dialogflow.v2.Context context : contextList) {
             Map<String, Value> contextParam = context.getParameters().getFieldsMap();
-            List<Value> hyperLinkList = (contextParam.get("linkItems").getListValue() != null) ? contextParam.get("linkItems").getListValue().getValuesList() : null;
+            List<Value> hyperLinkList = (contextParam.get("linkItems") != null) ? contextParam.get("linkItems").getListValue().getValuesList() : null;
             String align = context.getParameters().getFieldsMap().get("align").getStringValue();
             String sizeValue = context.getParameters().getFieldsMap().get("size").getStringValue();
 //            String eventName = context.getParameters().getFieldsMap().get("eventToCall").getStringValue();

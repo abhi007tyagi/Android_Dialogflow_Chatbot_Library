@@ -71,8 +71,8 @@ public class CheckBoxMessageTemplate extends MessageLayoutTemplate {
 
         for (com.google.cloud.dialogflow.v2.Context context : contextList) {
             Map<String, Value> contextParam = context.getParameters().getFieldsMap();
-            List<Value> list = (contextParam.get("items").getListValue() != null) ? contextParam.get("items").getListValue().getValuesList() : null;
-            List<Value> buttonList = (contextParam.get("buttonItems").getListValue() != null) ? contextParam.get("buttonItems").getListValue().getValuesList() : null;
+            List<Value> list = (contextParam.get("checkboxItems") != null) ? contextParam.get("checkboxItems").getListValue().getValuesList() : null;
+            List<Value> buttonList = (contextParam.get("buttonItems") != null) ? contextParam.get("buttonItems").getListValue().getValuesList() : null;
             String align = contextParam.get("align").getStringValue();
             String sizeValue = contextParam.get("size").getStringValue();
             String eventName = contextParam.get("eventToCall").getStringValue();
